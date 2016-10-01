@@ -10,7 +10,14 @@ module.exports = {
     "rules": {
         "react/jsx-filename-extension": 0,
         "comma-dangle": 0,
-        "class-methods-use-this": 0
+        "class-methods-use-this": 0,
+        "no-underscore-dangle": 0,
+        "no-return-assign": "warn",
+        "new-cap": "warn",
+        "no-shadow": "warn",
+        "func-names": "warn",
+        "prefer-arrow-callback": "warn",
+        "arrow-parens": 0
     },
     "parser": "babel-eslint"
 };

@@ -8,7 +8,9 @@ module.exports = {
         "meteor"
     ],
     "rules": {
-        "react/jsx-filename-extension": 0
+        "react/jsx-filename-extension": 0,
+        "comma-dangle": 0,
+        "class-methods-use-this": 0
     },
     "parser": "babel-eslint"
 };

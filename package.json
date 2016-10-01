@@ -1,5 +1,5 @@
 {
-  "name": "imagelister",
+  "name": "meteor-projects-bundle",
   "private": true,
   "scripts": {
     "start": "meteor run"

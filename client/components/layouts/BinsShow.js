@@ -2,6 +2,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import React, { Component, PropTypes } from 'react';
 
 import BinEditor from '../bins/BinEditor';
+import BinViewer from '../bins/BinViewer';
 
 import { Bins } from '../../../imports/collections/bins';
 
@@ -18,6 +19,7 @@ class BinsShow extends Component {
       <div>
         <h2>Bin: {bin._id}</h2>
         <BinEditor bin={bin} />
+        <BinViewer bin={bin} />
       </div>
     );
   }

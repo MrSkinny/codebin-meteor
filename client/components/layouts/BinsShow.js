@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 
 import BinEditor from '../bins/BinEditor';
 import BinViewer from '../bins/BinViewer';
+import BinShare from '../bins/BinShare';
 
 import { Bins } from '../../../imports/collections/bins';
 
@@ -20,6 +21,7 @@ class BinsShow extends Component {
         <h2>Bin: {bin._id}</h2>
         <BinEditor bin={bin} />
         <BinViewer bin={bin} />
+        <BinShare bin={bin} />
       </div>
     );
   }

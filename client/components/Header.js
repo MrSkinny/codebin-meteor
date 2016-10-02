@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import Accounts from './Accounts';
 
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 class Header extends Component {
   onBinClick = (e) => {
     e.preventDefault();
 
-    Meteor.call('bins.insert');
+    Meteor.call('bins.insert', (err, binId) => {
+      if (err) return;
+      browserHistory.push(`/bins/${binId}`);
+    });
   }
 
   render() {

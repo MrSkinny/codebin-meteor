@@ -12,8 +12,12 @@ Meteor.methods({
     });
   },
 
-  'bins.remove': function(bin) {
+  'bins.remove': function (bin) {
     return Bins.remove(bin);
+  },
+
+  'bins.update': function (bin, content) {
+    return Bins.update(bin, { $set: { content } });
   }
 });
 

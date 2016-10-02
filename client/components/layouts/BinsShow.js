@@ -16,7 +16,7 @@ class BinsShow extends Component {
 
     return (
       <div>
-        <h3>Bin: {bin._id}</h3>
+        <h2>Bin: {bin._id}</h2>
         <BinEditor bin={bin} />
       </div>
     );

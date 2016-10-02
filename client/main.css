@@ -21,3 +21,7 @@
 .BinShare .input-group {
   width: 30%;
 }
+
+.BinShare > div {
+  margin: 0 10px;
+}

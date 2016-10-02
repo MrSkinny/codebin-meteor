@@ -1,4 +1,6 @@
+import { createContainer } from 'meteor/react-meteor-data';
 import React, { Component, PropTypes } from 'react';
+import { Bins } from '../../../imports/collections/bins';
 
 const propTypes = {
   params: PropTypes.object.isRequired
@@ -16,4 +18,6 @@ class BinsShow extends Component {
 
 BinsShow.propTypes = propTypes;
 
-export default BinsShow;
+export default createContainer(() => {
+  return {};
+}, BinsShow);

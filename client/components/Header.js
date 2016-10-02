@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Accounts from './Accounts';
-
 import { Link, browserHistory } from 'react-router';
+
+import Accounts from './Accounts';
 
 class Header extends Component {
   onBinClick = (e) => {

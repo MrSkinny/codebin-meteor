@@ -1,9 +1,9 @@
 // General approach to use 3rd-party libs: Render in componentDidMount,
 // then clean up in componentWillUnmount
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Template } from 'meteor/templating';
 import { Blaze } from 'meteor/blaze';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 class Accounts extends Component {
   componentDidMount() {

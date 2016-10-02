@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import { Bins } from '../../../imports/collections/bins';

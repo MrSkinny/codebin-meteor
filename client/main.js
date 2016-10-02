@@ -6,8 +6,6 @@ import App from './components/App';
 import BinsIndex from './components/layouts/BinsIndex';
 import BinsShow from './components/layouts/BinsShow';
 
-import { Bins } from '../imports/collections/bins';
-
 const routes = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>

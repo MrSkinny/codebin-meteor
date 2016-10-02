@@ -17,7 +17,8 @@ module.exports = {
         "no-shadow": "warn",
         "func-names": "warn",
         "prefer-arrow-callback": "warn",
-        "arrow-parens": 0
+        "arrow-parens": 0,
+        "import/prefer-default-export": "warn"
     },
     "parser": "babel-eslint"
 };

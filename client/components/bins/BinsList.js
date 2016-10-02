@@ -28,6 +28,14 @@ class BinsList extends Component {
   ))
 
   render() {
+    if (!Meteor.user()) {
+      return (
+        <div className="container-fluid">
+          <h4>Please sign in to begin using CodeBin!</h4>
+        </div>
+      );
+    }
+
     return (
       <ul className="list-group">
         {this.renderBins()}
@@ -40,6 +48,7 @@ BinsList.propTypes = propTypes;
 
 export default createContainer(() => {
   Meteor.subscribe('bins');
+  Meteor.subscribe('sharedBins');
 
   return { bins: Bins.find({}).fetch() };
 }, BinsList);

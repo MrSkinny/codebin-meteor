@@ -14,6 +14,7 @@ const propTypes = {
 class BinsShow extends Component {
   render() {
     const { bin } = this.props;
+    if (!Meteor.user()) return <div>You must be logged in to view any bin</div>;
     if (!bin) return <div>Fetching bin...</div>;
 
     return (
@@ -31,6 +32,7 @@ BinsShow.propTypes = propTypes;
 
 export default createContainer(props => {
   Meteor.subscribe('bins');
+  Meteor.subscribe('sharedBins');
 
   return { bin: Bins.findOne({ _id: props.params.binId }) };
 }, BinsShow);

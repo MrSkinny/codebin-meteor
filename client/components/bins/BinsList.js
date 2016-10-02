@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import { Link } from 'react-router';
+
 import { Bins } from '../../../imports/collections/bins';
 
 const propTypes = {
@@ -13,7 +15,7 @@ class BinsList extends Component {
 
   renderBins = () => this.props.bins.map(bin => (
     <li className="list-group-item" key={bin._id}>
-      Bin {bin._id}
+      Bin <Link to={`/bins/${bin._id}`}>{bin._id}</Link>
       <span className="pull-right">
         <button
           className="btn btn-danger"

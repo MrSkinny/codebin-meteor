@@ -1,12 +1,11 @@
 import React from 'react';
 
 import Header from './Header';
-import BinsList from './bins/BinsList';
 
-const App = () => (
+const App = props => (
   <div className="App">
     <Header />
-    <BinsList />
+    {props.children}
   </div>
 );
 

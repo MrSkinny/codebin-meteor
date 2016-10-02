@@ -1,10 +1,12 @@
 import { createContainer } from 'meteor/react-meteor-data';
 import React, { Component, PropTypes } from 'react';
 
+import BinEditor from '../bins/BinEditor';
+
 import { Bins } from '../../../imports/collections/bins';
 
 const propTypes = {
-  bin: PropTypes.object.isRequired
+  bin: PropTypes.object
 };
 
 class BinsShow extends Component {
@@ -13,7 +15,10 @@ class BinsShow extends Component {
     if (!bin) return <div>Fetching bin...</div>;
 
     return (
-      <div>Bin: {bin._id}</div>
+      <div>
+        <h3>Bin: {bin._id}</h3>
+        <BinEditor bin={bin} />
+      </div>
     );
   }
 }

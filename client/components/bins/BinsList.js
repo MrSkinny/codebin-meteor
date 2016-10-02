@@ -1,17 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Bins } from '../../../imports/collections/bins';
 
+const propTypes = {
+  bins: PropTypes.array.isRequired
+};
+
 class BinsList extends Component {
-  renderBins = () => {
-    return this.props.bins.map(bin => {
-      return (
-        <li className="list-group-item" key={bin._id}>
-          Bin {bin._id}
-        </li>
-      );
-    });
+  onBinRemove(bin) {
+    Meteor.call('bins.remove', bin);
   }
+
+  renderBins = () => this.props.bins.map(bin => (
+    <li className="list-group-item" key={bin._id}>
+      Bin {bin._id}
+      <span className="pull-right">
+        <button
+          className="btn btn-danger"
+          onClick={() => this.onBinRemove(bin)}
+        >
+          Remove
+        </button>
+      </span>
+    </li>
+  ))
 
   render() {
     return (
@@ -21,6 +33,8 @@ class BinsList extends Component {
     );
   }
 }
+
+BinsList.propTypes = propTypes;
 
 export default createContainer(() => {
   Meteor.subscribe('bins');

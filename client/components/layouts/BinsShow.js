@@ -1,23 +1,27 @@
 import { createContainer } from 'meteor/react-meteor-data';
 import React, { Component, PropTypes } from 'react';
+
 import { Bins } from '../../../imports/collections/bins';
 
 const propTypes = {
-  params: PropTypes.object.isRequired
+  bin: PropTypes.object.isRequired
 };
 
 class BinsShow extends Component {
   render() {
-    const { params } = this.props;
+    const { bin } = this.props;
+    if (!bin) return <div>Fetching bin...</div>;
 
     return (
-      <div>BinId: {params.binId}</div>
+      <div>Bin: {bin._id}</div>
     );
   }
 }
 
 BinsShow.propTypes = propTypes;
 
-export default createContainer(() => {
-  return {};
+export default createContainer(props => {
+  Meteor.subscribe('bins');
+
+  return { bin: Bins.findOne({ _id: props.params.binId }) };
 }, BinsShow);
